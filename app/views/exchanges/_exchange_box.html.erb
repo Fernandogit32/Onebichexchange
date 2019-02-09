@@ -14,10 +14,9 @@
           </div>
 
           <div class='form-group'>
-            <input type='number' name='amount' id='amount' class='form-control' placeholder='Quantidade ($10)' step='any' required>
+            <input type='number' name='amount' id='amount' class='form-control' placeholder='Quantidade ($10)' step='any' >
           </div>
-        </div>
-                    
+        </div>                  
         <div class='destination_currency'>
           <div class='form-group'>
             <p class='title'>Moeda Pretendida</p>
@@ -26,11 +25,32 @@
           <div class='form-group'>
             <input type='text' id='result' name='result' class='form-control' placeholder='Resultado' readonly>
           </div>
-        </div>
-        <div>
-          <button type='submit' class='btn btn-primary btn-exchange col-md-12'>CONVERTER</button>
-        </div>
+        </div>        
       <% end %>
+      
+      <div>
+          <button  id="invert" class='btn btn-primary btn-exchange col-md-12 primary'>inverter</button>
+        </div>  
+       
     </div>
   </div>
 </div>
+
+
+<script type="text/javascript">
+  
+ window.onload = function () {
+       invert();   
+   
+}   
+function invert(){
+  document.getElementById("invert").onclick =function(){
+  var t1 = document.getElementById("source_currency").value;
+  var t2 =  document.getElementById("target_currency").value;
+  document.getElementById("source_currency").value=t2;
+  var t2 =  document.getElementById("target_currency").value=t1;
+  }
+}
+ 
+
+</script>
